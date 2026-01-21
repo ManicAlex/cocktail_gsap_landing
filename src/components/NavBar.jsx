@@ -1,7 +1,25 @@
 import React from 'react'
+import { gsap } from 'gsap'
 import { navLinks } from '../../constants/index.jsx'
+import { useGSAP } from '@gsap/react'
 
 const NavBar = () => {
+    useGSAP(() => {
+        const navTeewn = gsap.timeline({
+            scrollTrigger: {
+                trigger: 'nav',
+                start: 'bottom top',
+            }
+        });
+
+        navTeewn.fromTo('nav', {backgroundColor: 'transparent'},{
+            backgroundColor: '#00000050',
+            backgroundfilter: 'blur(10px)',
+            duration: 1,
+            ease: 'power1.inOut',
+        })
+    })
+
   return (
     <nav>
         <div>
