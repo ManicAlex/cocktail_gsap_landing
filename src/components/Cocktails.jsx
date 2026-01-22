@@ -4,7 +4,7 @@ import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
 const Cocktails = () => {
-
+// GSAP Parallax Animation for Cocktail Section
     useGSAP(() => {
         const parallaxTimeline = gsap.timeline({
             scrollTrigger: {
@@ -14,20 +14,22 @@ const Cocktails = () => {
                 scrub: true,
             }
         })
-
+// Animate left and right leaf decorations
         parallaxTimeline
         .from('#c-left-leaf', {x:-100, y: 100 })
         .from('#c-right-leaf', {x:100, y: 100 })
     })
 
   return (
+    // Cocktail Section
     <section id="cocktails" className="noisy">    
     <img src="/images/cocktail-left-leaf.png" alt="l-leaf" id="c-left-leaf" className="left-decor"/>
     <img src="/images/cocktail-right-leaf.png" alt="r-leaf" id="c-right-leaf" className="right-decor"/>
-    
+
     <div className="list">
         <div className="popular">   
-        <h2 className="title">Most Popular Cocktails:</h2>
+        <h2>Most Popular Cocktails:</h2>
+        {/* Cocktail List from constants/index.jsx */}
         <ul>
             {cockTailLists.map(({name, country, detail, price}) => (
             <li key={name} className="drink-card">
@@ -41,8 +43,9 @@ const Cocktails = () => {
         </ul>
         </div>
 
-                <div className="loved">   
-        <h2 className="title">Most Loved Mocktails:</h2>
+        <div className="loved">   
+        <h2>Most Loved Mocktails:</h2>
+        {/* Mocktail List from constants/index.jsx */}
         <ul>
             {mockTailLists.map(({name, country, detail, price}) => (
             <li key={name} className="drink-card">
