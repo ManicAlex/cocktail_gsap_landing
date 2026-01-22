@@ -1,5 +1,5 @@
 import React from 'react'
-import { cockTailLists, mockTailLists } from '../../constants'
+import { cockTailLists, mockTailLists } from '../../constants/index.jsx'
 import { useGSAP } from '@gsap/react'
 import { gsap } from 'gsap'
 
