@@ -5,11 +5,12 @@ import { gsap } from 'gsap'
 
 
 const Art = () => {
+    // Media query to check for mobile devices
     const isMobile = useMediaQuery({ maxWidth: 767 });
 
+    // GSAP Masked Image Animation on Scroll
     useGSAP(() => {
         const start = isMobile ? 'top 20%' : 'top top';
-       
         const maskTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#art',
